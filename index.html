@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Wife</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #5a3044;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(150, 70, 100, 0.2);
+            z-index: 2;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        h1 {
+            margin-top: 15px;
+            font-size: 32px;
+            color: #d94f83;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #805064;
+        }
+
+        .letter {
+            margin-top: 25px;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #e96b9b;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #d94f83;
+        }
+
+        #secret {
+            display: none;
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d94f83;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-style: italic;
+        }
+
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: float 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">💗</div>
+
+        <h1>For My Wife :p</h1>
+
+        <p class="subtitle">
+            A little website made just for you.
+        </p>
+
+        <div class="letter">
+            <p>
+                helloww, baby. ❤️
+            </p>
+
+            <br>
+
+            <p>
+                congratulations, babyyyy. aym so so sooo proud of you :). I know you  worked hard for this, and seeing you get
+                recognized for something you're passionate about makes me genuinely happy. you deserve this moment, babyy.
+            </p>
+
+            <br>
+
+            <p>
+                I hope you know that I’m always going to be proud of you, whether you place or not.
+                but today, let me celebrate you a little extra because look at you!!
+                you did so well. your hard work really paid off, and I hope this becomes another memory that you’ll look back on and be proud of.
+            </p>
+
+            <br>
+
+            <p>
+                congratulations again, babyyy. keep believing in yourself, and never forget how capable you are.
+                 I’m always here, cheering for you. WOHOOOOO!!!
+            </p>
+        </div>
+
+        <button onclick="showSecret()">
+            Click this 💌
+        </button>
+
+        <p id="secret">
+            I love youuuu 💗
+        </p>
+
+        <p class="signature">
+            from chiaw :p,
+            <br>
+            <b>❤️ papoi</b>
+        </p>
+
+    </div>
+
+    <script>
+
+        function showSecret() {
+            const message = document.getElementById("secret");
+
+            message.style.display = "block";
+
+            createHearts();
+        }
+
+        function createHearts() {
+
+            for (let i = 0; i < 15; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("floating-heart");
+
+                heart.innerHTML = "💗";
+
+                heart.style.left = Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (Math.random() * 3 + 3) + "s";
+
+                heart.style.fontSize =
+                    (Math.random() * 20 + 20) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
